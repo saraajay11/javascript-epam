@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/2e44186307.js"></script>
+        <style>
+            .Register{
+                background-color: aqua;
+            }
+            .navbar-nav{
+                font-size: larger;
+                font-weight: 800;
+            }
+            .navbar-nav.navbar-center {
+                position: absolute;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+            .form1{
+                font-size: larger;
+                font-weight: 800;
+                white-space: normal;
+                background-color: aqua;
+                border-radius: 6px;
+            }
+            .btn-fb{
+                background-color: #3B5998;
+                border-radius: 6px;
+            }
+            .btn-g{
+                background-color: #db4a39;
+                border-radius: 6px;
+            }
+            .hr-or{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border: 0;
+                border-top: 1px solid rgb(41, 39, 39);
+                text-align: center;
+                height: 0px;
+                line-height: 0px;
+            }
+            div.hr-or:before {
+                content: '  OR  ';
+                background-color: #fff;
+            }
+        </style>
+        <script>
+            function val(){
+                var x=document.forms["form1"]["email"].value;
+                var y=document.forms["form1"]["pass"].value;
+                var gender=document.forms["form1"]["gender"];
+                var fname=document.forms["form1"]["fname"].value;
+                var lname=document.forms["form1"]["lname"].value;
+                if(fname==""){
+                    alert("first name should not be empty");
+                    return false;
+                }
+                else if(lname==""){
+                    alert("last name should not be empty");
+                    return false;
+                }
+                else if(gender[0].checked==false && gender[1].checked==false){
+                    alert("please select your gender");
+                    return false;
+                }
+                else if(x==""){
+                    alert("email should not be empty");
+                    return false;
+                }
+                else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x))){
+                    alert("enter valid email address");
+                    return false;
+                }
+                else if(y==""){
+                    alert("password should not be empty");
+                    return false;
+                }
+                else if(y.length<6){
+                    alert("password should contain atleast 6 characters!");
+                    return false;
+                }
+                alert("Sucessfully registered!");
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="Register">
+            <nav class="navbar navbar-info">
+                <a class="navbar-brand" href="#">
+                    <img src="https://yt3.ggpht.com/a/AGF-l7-WJChKbnwLJr-hZoyfEumBJmW9YinL9jIANQ=s900-c-k-c0xffffffff-no-rj-mo" alt="logo" style="width:30px;">
+                </a>
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="nav-item text-light">
+                    Register
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <form action="" method="post" name="form1" onsubmit="return val()">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="fname" placeholder="first name">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>   
+                </div><br>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="lname" placeholder="last name">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>   
+                </div><br>
+                <div class="input-group" style="margin-left: 20px;">
+                    <label>Gender:</label><br>
+                    <input type="radio" name="gender" id="1" value="Male"><label for="1">&nbsp;Male</label><br>
+                    <input type="radio" name="gender" id="2" value="Female"><label for="2">&nbsp;Female</label> 
+                </div><br>
+                <div class="input-group">
+                    <label>Date of Birth:</label><br>
+                    <input type="date" class="form-control" name="dob" required>
+                </div><br>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="email" placeholder="mail@example.com">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>   
+                </div>
+                <br>
+                <div class="input-group">
+                    <input type="password" class="form-control" name="pass" placeholder="password">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                </div>
+                <br><br>
+                <button type="submit" class="btn form1 text-light btn-md btn-block btn-outline">REGISTER</button>
+            </form>
+            <br> 
+            <a href="epam.html" style="float: right;">Sign in</a>      
+            <br><br><br>
+    </body>
+</html>
